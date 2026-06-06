@@ -1,0 +1,1295 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>曾子怡 · 作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFF8F0;
+  --apricot: #F5D5B8;
+  --orange: #E8784A;
+  --orange-deep: #C95D30;
+  --brown-dark: #2D1F16;
+  --brown-mid: #5C4A3A;
+  --brown-light: #C4926E;
+  --brown-pale: #E8D5C4;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 2px 12px rgba(45,31,22,0.06);
+  --shadow-md: 0 6px 28px rgba(45,31,22,0.10);
+  --shadow-lg: 0 14px 48px rgba(45,31,22,0.14);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family: 'DM Sans', 'Noto Sans SC', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--brown-mid);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 clamp(16px, 4vw, 48px);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,248,240,0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(196,146,110,0.18);
+  transition: box-shadow 0.3s ease;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(45,31,22,0.08); }
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  letter-spacing: -0.3px;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--orange); }
+
+.nav-links {
+  display: flex;
+  gap: clamp(14px, 3vw, 32px);
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brown-mid);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.25s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--orange);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--orange); }
+.nav-links a:hover::after { width: 100%; }
+
+.menu-toggle {
+  display: none;
+  background: none; border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--brown-dark);
+  margin: 5px 0;
+  border-radius: 1px;
+  transition: 0.3s;
+}
+
+/* ---- SECTION BASE ---- */
+.section {
+  padding: clamp(60px, 10vh, 120px) clamp(16px, 6vw, 80px);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--brown-dark);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: clamp(32px, 5vh, 56px);
+}
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px clamp(16px, 6vw, 80px) 80px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, #FFF8F0 0%, #FCE8D5 40%, #F5D5B8 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(232,120,74,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%; left: -20%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(196,146,110,0.10) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+.hero-greeting {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  color: var(--brown-dark);
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+.hero-name-en {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--brown-light);
+  margin-bottom: 24px;
+}
+.hero-tagline {
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  color: var(--brown-mid);
+  margin-bottom: 10px;
+}
+.hero-meta {
+  font-size: 0.85rem;
+  color: var(--brown-light);
+  margin-bottom: 40px;
+}
+.hero-cta {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(232,120,74,0.35);
+}
+.btn-primary:hover {
+  background: var(--orange-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232,120,74,0.45);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--brown-dark);
+  border: 2px solid var(--brown-pale);
+}
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+/* ---- ABOUT ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.about-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 40px);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,146,110,0.12);
+}
+.about-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 20px;
+}
+
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(196,146,110,0.15);
+}
+.edu-item:last-child { border-bottom: none; }
+.edu-label { font-weight: 600; color: var(--brown-dark); font-size: 0.9rem; }
+.edu-value { color: var(--brown-mid); font-size: 0.9rem; text-align: right; }
+.edu-value strong { color: var(--orange); font-size: 1.05rem; }
+
+.gpa-highlight {
+  display: inline-block;
+  background: var(--apricot);
+  color: var(--orange-deep);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-tag {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(232,120,74,0.08);
+  color: var(--orange);
+  border: 1px solid rgba(232,120,74,0.18);
+}
+.skill-tag.alt {
+  background: rgba(196,146,110,0.08);
+  color: var(--brown-light);
+  border: 1px solid rgba(196,146,110,0.18);
+}
+
+.award-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.award-list li {
+  font-size: 0.88rem;
+  color: var(--brown-mid);
+  padding-left: 20px;
+  position: relative;
+}
+.award-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: 0.6;
+}
+
+/* ---- CAMPUS EXPERIENCE CARDS ---- */
+.campus-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.campus-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(196,146,110,0.10);
+  padding: clamp(16px, 2.5vw, 24px);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.campus-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232,120,74,0.1);
+  border-color: rgba(232,120,74,0.18);
+}
+.campus-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.campus-card-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 2px;
+}
+.campus-card-period {
+  font-size: 0.75rem;
+  color: var(--brown-light);
+}
+.campus-card-badge {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--orange);
+  background: rgba(232,120,74,0.07);
+  padding: 3px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.campus-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.campus-metric {
+  text-align: center;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 8px 4px;
+}
+.campus-metric-num {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1.2;
+}
+.campus-metric-label {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--brown-light);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.campus-card-desc {
+  font-size: 0.8rem;
+  color: var(--brown-mid);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.campus-card-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+.campus-card-tags .skill-tag {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---- PROJECTS ---- */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(196,146,110,0.12);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.project-card.expanded {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(232,120,74,0.2);
+}
+
+.project-header {
+  padding: clamp(20px, 3vw, 32px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.project-info { flex: 1; }
+.project-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brown-light);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.project-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+.project-subtitle {
+  font-size: 0.88rem;
+  color: var(--brown-light);
+  margin-bottom: 12px;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.project-tag {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: rgba(232,120,74,0.07);
+  color: var(--orange);
+}
+.project-expand-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s;
+  box-shadow: 0 3px 12px rgba(232,120,74,0.3);
+}
+.project-expand-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.project-expand-text {
+  font-size: 0.75rem;
+  color: var(--orange);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+.project-card:hover .project-expand-text {
+  color: var(--orange);
+}
+.project-card.expanded .project-expand-icon {
+  transform: rotate(180deg);
+}
+
+.project-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.project-card.expanded .project-body {
+  max-height: 2000px;
+}
+.project-body-inner {
+  padding: 0 clamp(20px, 3vw, 32px) clamp(20px, 3vw, 32px);
+  border-top: 1px solid rgba(196,146,110,0.12);
+}
+
+.project-section {
+  margin-bottom: 24px;
+}
+.project-section h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+.project-section p,
+.project-section li {
+  font-size: 0.9rem;
+  color: var(--brown-mid);
+  line-height: 1.8;
+}
+.project-section ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.project-section ul.features {
+  flex-direction: column;
+  gap: 8px;
+}
+.project-section ul.features li {
+  padding-left: 18px;
+  position: relative;
+}
+.project-section ul.features li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.metrics-row {
+  display: flex;
+  gap: clamp(12px, 2vw, 24px);
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.metric-box {
+  flex: 1;
+  min-width: 140px;
+  background: linear-gradient(135deg, rgba(232,120,74,0.06), rgba(245,213,184,0.15));
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  text-align: center;
+}
+.metric-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+.metric-label {
+  font-size: 0.78rem;
+  color: var(--brown-light);
+  margin-top: 6px;
+}
+
+/* ---- RESEARCH ---- */
+.research-area {
+  background: linear-gradient(135deg, #fff, var(--apricot));
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 5vw, 56px);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,146,110,0.12);
+}
+
+.research-big-numbers {
+  display: flex;
+  gap: clamp(16px, 4vw, 40px);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 32px 0;
+}
+.research-stat {
+  text-align: center;
+}
+.research-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+.research-stat .desc {
+  font-size: 0.85rem;
+  color: var(--brown-light);
+  margin-top: 8px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.research-point {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid rgba(196,146,110,0.1);
+}
+.research-point h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+.research-point p {
+  font-size: 0.82rem;
+  color: var(--brown-mid);
+  line-height: 1.6;
+}
+
+/* ---- CONTACT ---- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 20px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  color: var(--brown-mid);
+}
+.contact-item .icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(232,120,74,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.contact-item a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.qr-placeholder {
+  width: 160px; height: 160px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--brown-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--brown-light);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(196,146,110,0.15);
+}
+.footer p {
+  font-size: 0.82rem;
+  color: var(--brown-light);
+}
+
+/* ---- ANIMATIONS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.count-up {
+  transition: none;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .about-grid,
+  .contact-grid,
+  .campus-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: rgba(255,248,240,0.96);
+    backdrop-filter: blur(14px);
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    gap: 20px;
+    border-bottom: 1px solid rgba(196,146,110,0.18);
+    transform: translateY(-110%);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.open {
+    transform: translateY(0);
+  }
+  .menu-toggle { display: block; }
+
+  .project-header {
+    flex-direction: column;
+  }
+  .project-expand-icon {
+    align-self: flex-end;
+  }
+
+  .metrics-row {
+    flex-direction: column;
+  }
+  .metric-box { min-width: auto; }
+
+  .research-big-numbers {
+    gap: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity:1; transform:none; transition:none; }
+  .project-body { transition:none; }
+  html { scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Ziyi<span>Zeng</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeMenu()">关于</a></li>
+    <li><a href="#campus" onclick="closeMenu()">校园经历</a></li>
+    <li><a href="#projects" onclick="closeMenu()">项目经历</a></li>
+    <li><a href="#contact" onclick="closeMenu()">联系</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <p class="hero-greeting">Portfolio</p>
+    <h1 class="hero-name">曾子怡</h1>
+    <p class="hero-name-en">Ziyi Zeng</p>
+    <p class="hero-tagline">用数据感知世界，用产品创造温度</p>
+    <p class="hero-meta">中共预备党员 · 数据科学与大数据技术 · 华南师范大学 · 2027届</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">查看作品</a>
+      <a href="#contact" class="btn btn-outline">联系我</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <p class="section-label reveal">About</p>
+  <h2 class="section-title reveal">关于我</h2>
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <h3>教育背景</h3>
+      <div class="edu-item">
+        <span class="edu-label">政治面貌</span>
+        <span class="edu-value" style="color:var(--orange);font-weight:600;">中共预备党员</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-label">学校</span>
+        <span class="edu-value" style="color:var(--orange);font-weight:600;">华南师范大学</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-label">专业</span>
+        <span class="edu-value" style="color:var(--orange);font-weight:600;">数据科学与大数据技术</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-label">学制</span><span class="edu-value" style="color:var(--orange);font-weight:600;">2023 — 2027 · 本科</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-label">GPA</span>
+        <span class="edu-value"><strong>3.60</strong></span>
+      </div>
+      <span class="gpa-highlight">专业前 20%</span>
+      <div style="margin-top:16px;">
+        <p style="font-size:0.85rem;color:var(--brown-mid);line-height:1.8;">
+          <strong>主修课程：</strong>概率论与数理统计 · 数据库系统原理 · 数学建模 · 软件工程 · Web开发基础 · Android应用系统设计
+        </p>
+      </div>
+    </div>
+
+    <div class="about-card reveal">
+      <h3>获奖与证书</h3>
+      <ul class="award-list">
+        <li>校级一等奖学金、校级二等奖学金</li>
+        <li>全国大学生数学建模竞赛 省级三等奖</li>
+        <li>统计建模大赛 校级二等奖</li>
+        <li>"小挑战杯" 校级银奖</li>
+        <li>EI 会议论文（第二作者）</li>
+        <li>校级金种子项目 顺利结题</li>
+        <li>大学英语六级（CET-6）</li>
+        <li>优秀共青团员 · 优秀团日活动 · 五四红旗团支部</li>
+        <li>普通话二级甲等</li>
+      </ul>
+    </div>
+
+
+    <div class="about-card reveal" style="grid-column: 1 / -1;">
+      <h3>技能</h3>
+      <div class="skills-cloud">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag alt">Android Studio</span>
+        <span class="skill-tag alt">Figma</span>
+        <span class="skill-tag">Servlet / JSP</span>
+        <span class="skill-tag alt">MySQL</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag alt">阿里云 ECS</span>
+        <span class="skill-tag">豆包大模型 API</span>
+        <span class="skill-tag alt">Cursor AI</span>
+        <span class="skill-tag">Room 数据库</span>
+        <span class="skill-tag alt">Retrofit / OkHttp</span>
+        <span class="skill-tag">墨刀</span>
+        <span class="skill-tag alt">RESTful API</span>
+        <span class="skill-tag">数据分析</span>
+        <span class="skill-tag alt">Prompt 优化</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAMPUS ===== -->
+<section class="section" id="campus">
+  <p class="section-label reveal">Campus</p>
+  <h2 class="section-title reveal">校园经历</h2>
+
+  <div class="campus-cards">
+    <!-- 兼职班主任 -->
+    <div class="campus-card">
+      <div class="campus-card-header">
+        <div class="campus-card-info">
+          <div class="campus-card-role">兼职班主任</div>
+          <div class="campus-card-period">2025.09 — 2026.07</div>
+        </div>
+        <div class="campus-card-badge">25大数据1班</div>
+      </div>
+      <div class="campus-card-metrics">
+        <div class="campus-metric"><span class="campus-metric-num">4</span><span class="campus-metric-label">党团主题教育</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">62.5%</span><span class="campus-metric-label">入党申请比例</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">79.5%</span><span class="campus-metric-label">绩点 2.8+</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">0</span><span class="campus-metric-label">后期缺勤</span></div>
+      </div>
+      <p class="campus-card-desc">以"数智领航，行稳致远"为理念，全面负责 44 人新生班级的思想引领、班级建设、学风管理与朋辈关怀。科学分配宿舍与分班编排，组织破冰班会、班委培训、新老生交流会、期末动员等系列活动。</p>
+      <div class="campus-card-tags">
+        <span class="skill-tag alt">沟通表达</span>
+        <span class="skill-tag alt">危机处理</span>
+        <span class="skill-tag alt">组织管理</span>
+      </div>
+    </div>
+    <!-- 团支书 -->
+    <div class="campus-card">
+      <div class="campus-card-header">
+        <div class="campus-card-info">
+          <div class="campus-card-role">班级团支书</div>
+          <div class="campus-card-period">2024.09 — 2025.07</div>
+        </div>
+        <div class="campus-card-badge">五四红旗团支部</div>
+      </div>
+      <div class="campus-card-metrics">
+        <div class="campus-metric"><span class="campus-metric-num">3+</span><span class="campus-metric-label">主题团日活动</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">校级</span><span class="campus-metric-label">优秀团日</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">院级</span><span class="campus-metric-label">三等奖</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">30</span><span class="campus-metric-label">团员覆盖</span></div>
+      </div>
+      <p class="campus-card-desc">策划并主持多场主题团日活动（理论学习 + 红色拼贴诗 + 猫抓老鼠户外活动），获校级优秀团日活动、院级三等奖、五四红旗团支部称号；负责支部思想建设与团员发展，推动支部凝聚力与政治素养双提升。</p>
+      <div class="campus-card-tags">
+        <span class="skill-tag alt">活动策划</span>
+        <span class="skill-tag alt">团队建设</span>
+        <span class="skill-tag alt">思想引领</span>
+      </div>
+    </div>
+    <!-- 班长 -->
+    <div class="campus-card">
+      <div class="campus-card-header">
+        <div class="campus-card-info">
+          <div class="campus-card-role">班级班长</div>
+          <div class="campus-card-period">2023.09 — 2024.07</div>
+        </div>
+        <div class="campus-card-badge">46人班级</div>
+      </div>
+      <div class="campus-card-metrics">
+        <div class="campus-metric"><span class="campus-metric-num">5+</span><span class="campus-metric-label">大型活动统筹</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">4</span><span class="campus-metric-label">主题班会</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">校级</span><span class="campus-metric-label">校运会组织</span></div>
+        <div class="campus-metric"><span class="campus-metric-num">100%</span><span class="campus-metric-label">活动参与率</span></div>
+      </div>
+      <p class="campus-card-desc">统筹班级日常事务管理与学风建设，组织家乡文化交流会促进凝聚力，统筹校运会报名与后勤保障，策划端午迎中秋、期末动员等主题班会，获评优秀通讯集体；具备出色的统筹协调与多任务并行能力。</p>
+      <div class="campus-card-tags">
+        <span class="skill-tag alt">统筹协调</span>
+        <span class="skill-tag alt">多任务管理</span>
+        <span class="skill-tag alt">领导力</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section" id="projects">
+  <p class="section-label reveal">Projects</p>
+  <h2 class="section-title reveal">项目经历</h2>
+  <div class="projects-grid">
+
+    <!-- MoodDiary -->
+    <div class="project-card reveal" data-project="mooddiary">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="project-info">
+          <p class="project-number">01 / Android</p>
+          <h3 class="project-name">MoodDiary · 心情日记</h3>
+          <p class="project-subtitle">原生 Java Android App，离线优先 + 云端同步双架构，集成豆包大模型 AI 能力</p>
+          <div class="project-tags">
+            <span class="project-tag">Android Studio</span>
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Room</span>
+            <span class="project-tag">Supabase</span>
+            <span class="project-tag">豆包大模型</span>
+            <span class="project-tag">自定义 View</span>
+          </div>
+        </div>
+        <div class="project-expand-hint"><span class="project-expand-text">点击展开</span><div class="project-expand-icon">⌄</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-body-inner">
+          <div class="project-section">
+            <h4>背景与痛点</h4>
+            <p>在校生缺少低成本的 AI 情绪陪伴工具，市面同类产品功能单一且多为付费订阅。通过 50+ 学生问卷调研，发现 78% 受访者希望有一款能记录心情并提供 AI 情绪反馈的免费应用。使用墨刀/Figma 完成原型设计与 PRD 输出。</p>
+          </div>
+          <div class="project-section">
+            <h4>技术架构</h4>
+            <p><strong>本地层：</strong>Room 数据库持久化存储，离线模式下完整可用；<strong>云端层：</strong>Supabase PostgreSQL + Auth 认证 + Storage 图片存储，联网后自动双向同步，RLS 行级安全策略保障数据隔离；<strong>AI 层：</strong>火山引擎豆包大模型 API，文生文 + 文生图双能力。</p>
+          </div>
+          <div class="project-section">
+            <h4>核心功能</h4>
+            <ul class="features">
+              <li>6 种情绪标签（开心/难过/生气/平静/焦虑/疲惫）+ 相册配图</li>
+              <li>AI 治愈短句生成 —— 根据日记内容自动生成专属安抚语录</li>
+              <li>AI 配图生成 —— 依据文字描述一键生成插画，自动云端存储</li>
+              <li>自定义 MoodPieChartView 环形饼图 + IntensityBarChartView 柱状走势图</li>
+              <li>暖色/深色双主题切换，全局即时生效</li>
+              <li>每日提醒 + 每周报告 + 鼓励推送，可自定义提醒时间</li>
+            </ul>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div class="metric-num" data-count="17">0</div>
+              <div class="metric-label">Activity 页面</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="35">0</div>
+              <div class="metric-label">XML 布局文件</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="20">0</div>
+              <div class="metric-label">内测用户数</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="40">0</div>
+              <div class="metric-label">开发效率提升 %</div>
+            </div>
+          </div>
+          <div class="project-section" style="margin-top:20px;">
+            <p style="font-size:0.85rem;color:var(--brown-light);">
+              GitHub: <a href="https://github.com/ppptatoo/MoodDiary" style="color:var(--orange);font-weight:600;">github.com/ppptatoo/MoodDiary</a> · 2024.12 — 2025.05 · 核心成员
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CampusActivitySystem -->
+    <div class="project-card reveal" data-project="campus">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="project-info">
+          <p class="project-number">02 / Java Web</p>
+          <h3 class="project-name">CampusActivitySystem · 校园活动管理系统</h3>
+          <p class="project-subtitle">Servlet + JSP + JDBC + MySQL，RBAC 三级权限，四大活动模块，已部署阿里云</p>
+          <div class="project-tags">
+            <span class="project-tag">Servlet</span>
+            <span class="project-tag">JSP</span>
+            <span class="project-tag">JDBC</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">RBAC</span>
+            <span class="project-tag">阿里云 ECS</span>
+            <span class="project-tag">Tomcat</span>
+          </div>
+        </div>
+        <div class="project-expand-hint"><span class="project-expand-text">点击展开</span><div class="project-expand-icon">⌄</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-body-inner">
+          <div class="project-section">
+            <h4>背景与痛点</h4>
+            <p>校园活动信息高度割裂，超 60% 学生曾错过感兴趣的讲座或竞赛报名。基于课程实训与校园真实场景需求，规划了管理员/社团负责人/普通学生三级权限体系，拆分为五大业务模块，从零搭建全栈 Web 系统。</p>
+          </div>
+          <div class="project-section">
+            <h4>技术架构</h4>
+            <p><strong>后端：</strong>Java 8 + Servlet 4.0 + JDBC 纯手工 MVC 三层架构，8 个 Servlet 控制层、8 个 DAO 数据访问层；<strong>安全：</strong>SHA-256 + 固定盐值密码摘要，LoginFilter 全局拦截 + Session 认证；<strong>部署：</strong>阿里云 ECS + Apache Tomcat 9.0，公网可访问。</p>
+          </div>
+          <div class="project-section">
+            <h4>核心功能</h4>
+            <ul class="features">
+              <li>Admin / Leader / User 三级 RBAC 权限管控，各角色操作边界清晰</li>
+              <li>讲座 · 社团活动 · 竞赛 · 评优 四大活动模块，完整 CRUD</li>
+              <li>评优附件上传/下载（Commons FileUpload + UUID 重命名）</li>
+              <li>活动收藏 + 浏览记录追踪 + 站内消息通知（新活动自动通知全体用户）</li>
+              <li>8 张数据表，ER 关系设计，utf8mb4 字符集</li>
+            </ul>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div class="metric-num" data-count="8">0</div>
+              <div class="metric-label">数据表</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="8">0</div>
+              <div class="metric-label">Servlet 控制器</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="4">0</div>
+              <div class="metric-label">活动模块</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="60">0</div>
+              <div class="metric-label">管理效率提升 %</div>
+            </div>
+          </div>
+          <div class="project-section" style="margin-top:20px;">
+            <p style="font-size:0.85rem;color:var(--brown-light);">
+              公网地址: <a href="http://120.77.178.130:8233/CampusActivitySystem/login" style="color:var(--orange);font-weight:600;">120.77.178.130:8233</a> · GitHub: <a href="https://github.com/ppptatoo/CampusActivitySystem" style="color:var(--orange);font-weight:600;">github.com/ppptatoo/CampusActivitySystem</a> · 2026.05 — 2026.06 · 核心成员
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mamba -->
+    <div class="project-card reveal" data-project="mamba">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="project-info">
+          <p class="project-number">03 / 科研</p>
+          <h3 class="project-name">基于 Mamba 架构的工业预测性维护模型</h3>
+          <p class="project-subtitle">Python 时序数据分析 + 深度学习，Mamba × Koopman 融合，EI 会议论文</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">时序建模</span>
+            <span class="project-tag">Mamba</span>
+            <span class="project-tag">Koopman</span>
+            <span class="project-tag">特征工程</span>
+            <span class="project-tag">EI 论文</span>
+          </div>
+        </div>
+        <div class="project-expand-hint"><span class="project-expand-text">点击展开</span><div class="project-expand-icon">⌄</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-body-inner">
+          <div class="project-section">
+            <h4>研究动机</h4>
+            <p>传统 LSTM/Transformer 在工业故障预测场景中存在长序列建模泛化不足、推理速度慢的问题。探索 Mamba 状态空间模型与 Koopman 算子理论的融合方案，面向工业时序数据的预测性维护场景。</p>
+          </div>
+          <div class="project-section">
+            <h4>研究工作</h4>
+            <ul class="features">
+              <li>工业时序数据清洗与预处理流水线搭建</li>
+              <li>多维特征工程：时域/频域/统计特征提取 + 跨域特征融合</li>
+              <li>Mamba 序列建模框架搭建，探索与 Koopman 算子理论的融合方向</li>
+              <li>对比实验设计：Mamba vs LSTM vs Transformer 在预测精度与推理速度上的差异</li>
+            </ul>
+          </div>
+          <div class="project-section">
+            <h4>学术认可</h4>
+            <p>EI 会议论文（第二作者）+ 小挑校级银奖 + 金种子项目结题</p>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div class="metric-num" data-count="22" data-suffix="%">0</div>
+              <div class="metric-label">MAE 下降</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="30" data-suffix="%">0</div>
+              <div class="metric-label">推理效率提升</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="1">0</div>
+              <div class="metric-label">EI 会议论文（第二作者）</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" data-count="1">0</div>
+              <div class="metric-label">小挑校级银奖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+  <p class="section-label reveal">Contact</p>
+  <h2 class="section-title reveal">联系我</h2>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info">
+        <h3>期待与您交流</h3>
+        <div class="contact-item">
+          <div class="icon">&#9990;</div>
+          <span>13612582318</span>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#9993;</div>
+          <a href="mailto:2358299518@qq.com">2358299518@qq.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#9906;</div>
+          <span>广东佛山 / 广州 / 深圳</span>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#9733;</div>
+          <span>一周到岗 5 天 · 可实习 3 个月以上 · 7 月到岗</span>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="https://github.com/ppptatoo" class="btn btn-outline" style="font-size:0.85rem;">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <div class="qr-placeholder">
+        部署后<br>此处放置<br>作品集二维码
+      </div>
+      <p style="font-size:0.78rem;color:var(--brown-light);margin-top:12px;">扫码即可访问</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>曾子怡 &copy; 2026 · 数据科学与大数据技术 · 华南师范大学</p>
+</footer>
+
+<script>
+// ---- Nav scroll effect ----
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ---- Mobile menu ----
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+function closeMenu() {
+  navLinks.classList.remove('open');
+}
+
+// ---- Project expand ----
+function toggleProject(headerEl) {
+  const card = headerEl.parentElement;
+  const wasExpanded = card.classList.contains('expanded');
+
+  // Close all others
+  document.querySelectorAll('.project-card.expanded').forEach(c => {
+    if (c !== card) c.classList.remove('expanded');
+  });
+
+  card.classList.toggle('expanded');
+
+  // If expanding, count up metrics inside
+  if (!wasExpanded && card.classList.contains('expanded')) {
+    setTimeout(() => {
+      card.querySelectorAll('.metric-num[data-count]').forEach(el => {
+        countUp(el);
+      });
+    }, 300);
+  }
+}
+
+// ---- Count up animation ----
+function countUp(el) {
+  const target = parseInt(el.getAttribute('data-count'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 1400;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 4); // ease-out-quart
+    const current = Math.round(eased * target);
+    el.textContent = current + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+  requestAnimationFrame(update);
+}
+
+// ---- Scroll reveal ----
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// Count up big research numbers on scroll
+const researchNums = document.querySelectorAll('.research-stat .num[data-count]');
+const researchObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      countUp(entry.target);
+      researchObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+researchNums.forEach(el => researchObserver.observe(el));
+</script>
+
+</body>
+</html>
